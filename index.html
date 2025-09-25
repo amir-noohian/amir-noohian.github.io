@@ -7,20 +7,20 @@
   <meta name="description" content="Robotics portfolio of Amirhossein Noohian — teleoperation, control, machine learning, and computer vision." />
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #111833;
-      --text: #e8ecf1;
-      --muted: #9fb0c3;
-      --accent: #60a5fa;
-      --accent-2: #34d399;
-      --card: #0f162e;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+      --bg: #fdfdfd;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-2: #059669;
+      --card: #f9fafb;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, #0b1020 0%, #0d1430 100%);
+      background: var(--bg);
       color: var(--text);
     }
     a { color: var(--accent); text-decoration: none; }
@@ -36,14 +36,14 @@
       display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: center;
     }
     .hero img {
-      width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(255,255,255,0.08);
+      width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(0,0,0,0.05);
     }
     .hero h1 { margin: 0 0 8px; font-size: 28px; }
     .hero p { margin: 0; color: var(--muted); line-height: 1.6; }
     .hero .links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
     .chip {
       display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
-      background: #0c1228; color: var(--text); border: 1px solid rgba(255,255,255,0.06);
+      background: #f3f4f6; color: var(--text); border: 1px solid #e5e7eb;
     }
 
     /* Section wrapper */
@@ -61,20 +61,20 @@
     .project-card {
       grid-column: span 12;
       background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 16px; border: 1px solid rgba(255,255,255,0.06);
+      padding: 16px; border: 1px solid #e5e7eb;
       display: grid; grid-template-columns: 1fr; gap: 12px;
     }
     .project-media {
-      width: 100%; aspect-ratio: 16/9; background: #0b1228; border-radius: 12px; overflow: hidden;
-      display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.06);
+      width: 100%; aspect-ratio: 16/9; background: #f3f4f6; border-radius: 12px; overflow: hidden;
+      display: grid; place-items: center; border: 1px solid #e5e7eb;
     }
     .project-media iframe, .project-media video, .project-media img { width: 100%; height: 100%; display: block; }
     .project-title { margin: 4px 0 6px; font-size: 18px; }
     .project-desc { margin: 0; color: var(--muted); }
     .project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
     .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);
-      background: #0c142c;
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; border: 1px solid #e5e7eb;
+      background: #f9fafb;
     }
     .btn.secondary { background: transparent; }
 
@@ -83,17 +83,14 @@
     }
 
     /* Footer */
-    footer { text-align: center; color: var(--muted); padding: 28px; }
+    footer { text-align: center; color: var(--muted); padding: 28px; background: #f9fafb; border-top: 1px solid #e5e7eb; }
 
-    /* Small helper class for icons */
-    .i { width: 16px; height: 16px; display: inline-block; }
   </style>
 </head>
 <body>
   <!-- Header: short note + image of yourself -->
   <header>
     <div class="hero">
-      <!-- Replace images/profile.jpg with your own photo path -->
       <img src="images/profile.jpg" alt="Portrait of Amirhossein Noohian" />
       <div>
         <h1>Amirhossein Noohian</h1>
@@ -114,21 +111,14 @@
 
   <main>
     <div class="container">
-      <!-- Projects -->
       <h2 id="projects" class="section-title">Projects</h2>
       <p class="muted" style="margin: 0 4px 16px;">Short videos + notes, with links to publications and code.</p>
 
       <div class="grid">
-        <!-- Project 1 -->
+        <!-- Example project (keep the same structure for others) -->
         <article class="project-card">
           <div class="project-media">
-            <!-- Option A: YouTube embed (preferred for small repo size). Replace YOUTUBE_ID -->
-            <iframe src="https://www.youtube.com/embed/YOUTUBE_ID" title="Teleoperation demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <!-- Option B: Self-hosted video
-            <video controls preload="metadata" poster="images/teleop_poster.jpg">
-              <source src="videos/teleop_demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video> -->
+            <iframe src="https://www.youtube.com/embed/YOUTUBE_ID" title="Teleoperation demo" frameborder="0" allowfullscreen></iframe>
           </div>
           <div>
             <h3 class="project-title">Sensorless Four‑Channel Teleoperation (WAM)</h3>
@@ -136,60 +126,20 @@
               Inverse‑dynamics‑based four‑channel teleop that improves transparency in free motion and hard contact without force/torque sensors.
             </p>
             <div class="project-links">
-              <a class="btn" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener">Publication</a>
-              <a class="btn secondary" href="https://github.com/your-org/your-teleop-repo" target="_blank" rel="noopener">Code on GitHub</a>
+              <a class="btn" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank">Publication</a>
+              <a class="btn secondary" href="https://github.com/your-org/your-teleop-repo" target="_blank">Code on GitHub</a>
             </div>
           </div>
         </article>
-
-        <!-- Project 2 -->
-        <article class="project-card">
-          <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/YOUTUBE_ID" title="LSTM trajectory prediction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <div>
-            <h3 class="project-title">LSTM for Trajectory Prediction</h3>
-            <p class="project-desc">
-              Sequence models with dropout and L2 regularization to forecast joint space trajectories; includes grid‑search cross‑validation.
-            </p>
-            <div class="project-links">
-              <a class="btn secondary" href="https://github.com/your-user/lstm-trajectory" target="_blank" rel="noopener">Code on GitHub</a>
-              <a class="btn" href="https://your-publication-link" target="_blank" rel="noopener">Publication</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card">
-          <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/YOUTUBE_ID" title="GPS anomaly detection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-          <div>
-            <h3 class="project-title">GPS Anomaly Detection & Asset Tracking</h3>
-            <p class="project-desc">
-              Lightweight pipeline for detecting outliers in GPS streams for robotics logistics and monitoring; supports real‑time alerts.
-            </p>
-            <div class="project-links">
-              <a class="btn secondary" href="https://github.com/your-user/gps-anomaly" target="_blank" rel="noopener">Code on GitHub</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Add more projects by duplicating the block above -->
       </div>
 
-      <!-- Publications & global links -->
       <h2 id="pubs" class="section-title">Publications & Links</h2>
       <div class="project-card" style="grid-column: span 12;">
         <p class="muted" style="margin-top: 0;">
-          Full list: <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> ·
-          <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a> ·
-          <a href="https://github.com/your-github" target="_blank" rel="noopener">GitHub</a>
+          Full list: <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> ·
+          <a href="https://orcid.org/" target="_blank">ORCID</a> ·
+          <a href="https://github.com/your-github" target="_blank">GitHub</a>
         </p>
-        <ul style="margin: 8px 0 0 18px; line-height: 1.6;">
-          <li><strong>Sensorless Four‑Channel Teleoperation</strong>, ICRA 20XX. <a href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/your-org/your-teleop-repo" target="_blank" rel="noopener">Code</a></li>
-          <li><strong>LSTM Trajectory Prediction</strong>, 20XX. <a href="https://doi.org/your-doi" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/your-user/lstm-trajectory" target="_blank" rel="noopener">Code</a></li>
-        </ul>
       </div>
     </div>
   </main>
@@ -199,7 +149,6 @@
   </footer>
 
   <script>
-    // Update year automatically
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
