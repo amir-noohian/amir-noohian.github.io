@@ -68,7 +68,25 @@
       width: 100%; aspect-ratio: 16/9; background: #f3f4f6; border-radius: 12px; overflow: hidden;
       display: grid; place-items: center; border: 1px solid #e5e7eb;
     }
-    .project-media iframe, .project-media video, .project-media img { width: 100%; height: 100%; display: block; object-fit: contain;}
+    /* Videos/iframes should fully fill the 16:9 box */
+    .project-media iframe,
+    .project-media video {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    
+    /* GIFs/images should fit inside the box without distortion */
+    .project-media img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+      object-fit: contain;   /* preserves aspect ratio; letterboxes as needed */
+      object-position: center;
+    }
+    /* .project-media iframe, .project-media video, .project-media img { width: 100%; height: 100%; display: block; object-fit: contain;} */
     .project-title { margin: 4px 0 6px; font-size: 18px; }
     .project-desc { margin: 0; color: var(--muted); }
     .project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
