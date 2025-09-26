@@ -30,11 +30,10 @@
     /* Icon-only buttons */
     .chip, .btn { display: inline-flex; align-items: center; gap: 8px; }
     .icon-only { width: 40px; height: 40px; padding: 0; border-radius: 999px; justify-content: center; border: 1px solid #e5e7eb; background: #f3f4f6; }
-    .icon-only .fa { font-size: 20px; line-height: 1; }        /* header icons */
-    .btn.icon-only .fa { font-size: 18px; }                    /* project button icons */
+    .icon-only .fa { font-size: 20px; line-height: 1; }
+    .btn.icon-only .fa { font-size: 18px; }
     .links .icon-only { color: var(--text); }
     .links .icon-only:hover { background: #eef2ff; }
-    /* optional brand hovers */
     .links .icon-only[title="LinkedIn"]:hover { color: #0A66C2; }
     .links .icon-only[title="GitHub"]:hover { color: #181717; }
 
@@ -71,10 +70,8 @@
     .btn { padding: 8px 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb; }
     .btn.secondary { background: transparent; }
 
-    /* Meta rows: software + keywords */
-    .meta { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
-    .meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
-    .meta-row strong { font-size: 13px; color: #374151; }
+    /* Unified badges (no separate Software/Keywords containers) */
+    .badges { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 8px; }
     .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #eef2ff; border: 1px solid #e5e7eb; font-size: 12px; color: #1f2937; }
 
     @media (min-width: 760px) { .project-card { grid-column: span 6; } }
@@ -125,13 +122,13 @@
             <h3 class="project-title">Sensorless Four-Channel Control on Human-Scale WAM Teleoperation System</h3>
             <p class="project-desc">Inverse-dynamics-based four-channel teleop that improves transparency in free motion and hard contact without force/torque sensors.</p>
 
-            <div class="meta">
-              <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">ROS</span><span class="badge">C++</span><span class="badge">MATLAB</span>
-              </div>
-              <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">teleoperation</span><span class="badge">inverse dynamics</span><span class="badge">WAM Barrett</span>
-              </div>
+            <div class="badges">
+              <span class="badge">ROS</span>
+              <span class="badge">C++</span>
+              <span class="badge">MATLAB</span>
+              <span class="badge">teleoperation</span>
+              <span class="badge">inverse dynamics</span>
+              <span class="badge">WAM Barrett</span>
             </div>
 
             <div class="project-links">
@@ -151,13 +148,13 @@
             <h3 class="project-title">Inverse Dynamics Estimation</h3>
             <p class="project-desc">Symbolic rigid-body modeling methods for dynamics estimation of the WAM robot, including 4-DOF and 7-DOF implementations.</p>
 
-            <div class="meta">
-              <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">ROS</span><span class="badge">Python</span><span class="badge">MATLAB</span>
-              </div>
-              <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">rigid body dynamics</span><span class="badge">inverse dynamics</span><span class="badge">WAM Barrett</span>
-              </div>
+            <div class="badges">
+              <span class="badge">ROS</span>
+              <span class="badge">Python</span>
+              <span class="badge">MATLAB</span>
+              <span class="badge">rigid body dynamics</span>
+              <span class="badge">inverse dynamics</span>
+              <span class="badge">WAM Barrett</span>
             </div>
 
             <div class="project-links">
@@ -177,13 +174,13 @@
             <h3 class="project-title">Torque-based Reinforcement Learning (RL) for Visual Reacher Task</h3>
             <p class="project-desc">Reinforcement learning framework for visual reaching tasks, investigating the impact of torque- and velocity-based action spaces on control performance.</p>
 
-            <div class="meta">
-              <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">ROS</span><span class="badge">Python</span><span class="badge">Pytorch</span>
-              </div>
-              <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">RL</span><span class="badge">torque control</span><span class="badge">Franka Emika Panda</span>
-              </div>
+            <div class="badges">
+              <span class="badge">ROS</span>
+              <span class="badge">Python</span>
+              <span class="badge">Pytorch</span>
+              <span class="badge">RL</span>
+              <span class="badge">torque control</span>
+              <span class="badge">Franka Emika Panda</span>
             </div>
 
             <div class="project-links">
@@ -203,13 +200,12 @@
             <h3 class="project-title">Learning Dynamic Movement Primitives (DMPs) with Reinforcement Learning (RL)</h3>
             <p class="project-desc">Reinforcement learning approach to learn and refine dynamic movement primitives (DMPs) for improved adaptability in robotic motion.</p>
 
-            <div class="meta">
-              <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">Python</span><span class="badge">Pytorch</span><span class="badge">MuJoCo</span>
-              </div>
-              <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">RL</span><span class="badge">imitation learning</span>
-              </div>
+            <div class="badges">
+              <span class="badge">Python</span>
+              <span class="badge">Pytorch</span>
+              <span class="badge">MuJoCo</span>
+              <span class="badge">RL</span>
+              <span class="badge">imitation learning</span>
             </div>
 
             <div class="project-links">
@@ -229,13 +225,12 @@
             <h3 class="project-title">Adaptive and Fault-Tolerant Model Predictive Path Integral Control (MPPI)</h3>
             <p class="project-desc">Enhanced model predictive path integral control (MPPI) framework to make it robust to parameter uncertainties and system faults.</p>
 
-            <div class="meta">
-              <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">Python</span><span class="badge">MuJoCo</span>
-              </div>
-              <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">MPPI</span><span class="badge">adaptive control</span><span class="badge">fault-tolerant control</span>
-              </div>
+            <div class="badges">
+              <span class="badge">Python</span>
+              <span class="badge">MuJoCo</span>
+              <span class="badge">MPPI</span>
+              <span class="badge">adaptive control</span>
+              <span class="badge">fault-tolerant control</span>
             </div>
 
             <div class="project-links">
@@ -258,13 +253,11 @@
             <h3 class="project-title">Model-based Reinforcement Learning (RL) with Model Predictive Control (MPC)</h3>
             <p class="project-desc">Integration of model predictive control (MPC) with reinforcement learning to improve sample efficiency and ensure safe policy execution.</p>
 
-            <div class="meta">
-              <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">Python</span><span class="badge">Pytorch</span>
-              </div>
-              <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">MPC</span><span class="badge">Model-based RL</span>
-              </div>
+            <div class="badges">
+              <span class="badge">Python</span>
+              <span class="badge">Pytorch</span>
+              <span class="badge">MPC</span>
+              <span class="badge">Model-based RL</span>
             </div>
 
             <div class="project-links">
