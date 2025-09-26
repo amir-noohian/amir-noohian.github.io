@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amir Noohian | Robotics Portfolio</title>
-  $1
-  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <meta name="description" content="Robotics portfolio of Amir Noohian — teleoperation, control, machine learning, and computer vision." />
   <style>
     :root {
       --bg: #fdfdfd;
@@ -19,36 +18,24 @@
       --shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      background: var(--bg);
-      color: var(--text);
-    }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; background: var(--bg); color: var(--text); }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Icons & icon-only buttons */
-    .icon { width: 20px; height: 20px; display: inline-block; }
+    /* Icon-only buttons */
+    .icon { width: 20px; height: 20px; display: block; }
     .chip, .btn { display: inline-flex; align-items: center; gap: 8px; }
-    .icon-only { width: 40px; height: 40px; padding: 0; border-radius: 999px; justify-content: center; }
-    $1
-    .icon-only .ti { font-size: 20px; line-height: 1; } 
+    .icon-only { width: 40px; height: 40px; padding: 0; border-radius: 999px; justify-content: center; border: 1px solid #e5e7eb; background: #f3f4f6; }
     .links .icon-only { color: var(--text); }
-    .links .icon-only[title="LinkedIn"]:hover { color: #0A66C2; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); border: 0; }
+    .links .icon-only:hover { background: #eef2ff; }
 
     /* Header / Hero */
     header { padding: 56px 20px 28px; text-align: center; }
-    .hero {
-      max-width: 980px; margin: 0 auto; background: var(--panel); border-radius: var(--radius);
-      padding: 28px; box-shadow: var(--shadow);
-      display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: center;
-    }
+    .hero { max-width: 980px; margin: 0 auto; background: var(--panel); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: center; }
     .hero img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(0,0,0,0.05); }
     .hero h1 { margin: 0 0 8px; font-size: 28px; }
     .hero p { margin: 0; color: var(--muted); line-height: 1.6; }
     .hero .links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip { padding: 8px 12px; border-radius: 999px; background: #f3f4f6; color: var(--text); border: 1px solid #e5e7eb; }
 
     /* Section wrapper */
     main { padding: 8px 20px 60px; }
@@ -60,10 +47,7 @@
 
     /* Projects grid */
     .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .project-card {
-      grid-column: span 12; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 16px; border: 1px solid #e5e7eb; display: grid; grid-template-columns: 1fr; gap: 12px;
-    }
+    .project-card { grid-column: span 12; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px; border: 1px solid #e5e7eb; display: grid; grid-template-columns: 1fr; gap: 12px; }
 
     /* Responsive media box: consistent 16:9 for iframes/videos/images */
     .project-media { position: relative; width: 100%; overflow: hidden; border-radius: 12px; background: #f3f4f6; border: 1px solid #e5e7eb; }
@@ -88,12 +72,6 @@
 
     /* Footer */
     footer { text-align: center; color: var(--muted); padding: 28px; background: #f9fafb; border-top: 1px solid #e5e7eb; }
-      /* Icon font sizing */
-    .icon-only .ti { font-size: 20px; line-height: 1; }
-    .btn.icon-only .ti { font-size: 18px; line-height: 1; }
-    .links .icon-only { color: var(--text); }
-    .links .icon-only[title="LinkedIn"]:hover { color: #0A66C2; }
-    .links .icon-only[title="GitHub"]:hover { color: #181717; }
   </style>
 </head>
 <body>
@@ -105,22 +83,19 @@
         <h1>Amir Noohian</h1>
         <p>Researcher in robotics focused on teleoperation, inverse dynamics, and learning-enabled control.</p>
 
-        <!-- Icon-only links -->
+        <!-- Icon-only links (image-based, no webfonts) -->
         <div class="links">
           <a class="chip icon-only" href="#projects" title="Projects" aria-label="Projects">
-            <i class="ti ti-list-details" aria-hidden="true"></i>
+            <img class="icon" src="https://api.iconify.design/tabler:list-details.svg?color=%231f2937" alt="" loading="lazy" />
           </a>
-
           <a class="chip icon-only" href="https://github.com/amir-noohian" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-            <i class="ti ti-brand-github" aria-hidden="true"></i>
+            <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
           </a>
-
           <a class="chip icon-only" href="https://www.linkedin.com/in/amir-noohian" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-            <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            <img class="icon" src="https://api.iconify.design/tabler:brand-linkedin.svg?color=%231f2937" alt="" loading="lazy" />
           </a>
-
           <a class="chip icon-only" href="mailto:noohian@ualberta.ca" title="Email" aria-label="Email">
-            <i class="ti ti-mail" aria-hidden="true"></i>
+            <img class="icon" src="https://api.iconify.design/tabler:mail.svg?color=%231f2937" alt="" loading="lazy" />
           </a>
         </div>
       </div>
@@ -151,8 +126,8 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary icon-only" href="https://github.com/amir-noohian/wam-teleop-nowrist" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <i class="ti ti-brand-github" aria-hidden="true"></i>
+              <a class="btn icon-only" href="https://github.com/amir-noohian/wam-teleop-nowrist" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
+                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
             </div>
           </div>
@@ -177,8 +152,8 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary icon-only" href="https://github.com/amir-noohian/feasible-dynamics-estimation" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <i class="ti ti-brand-github" aria-hidden="true"></i>
+              <a class="btn icon-only" href="https://github.com/amir-noohian/feasible-dynamics-estimation" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
+                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
             </div>
           </div>
@@ -203,8 +178,8 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary icon-only" href="https://github.com/amir-noohian/torque-visual-reacher-rl" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <i class="ti ti-brand-github" aria-hidden="true"></i>
+              <a class="btn icon-only" href="https://github.com/amir-noohian/torque-visual-reacher-rl" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
+                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
             </div>
           </div>
@@ -230,12 +205,7 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://ieeexplore.ieee.org/abstract/document/10025346" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
-                <!-- Publication icon -->
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <path d="M14 2v6h6"></path>
-                  <path d="M16 13H8M16 17H8"></path>
-                </svg>
+                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
             </div>
           </div>
@@ -261,18 +231,10 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <path d="M14 2v6h6"></path>
-                  <path d="M16 13H8M16 17H8"></path>
-                </svg>
+                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
               <a class="btn secondary icon-only" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener" title="Publication (Frontiers)" aria-label="Publication (Frontiers)">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <path d="M14 2v6h6"></path>
-                  <path d="M16 13H8M16 17H8"></path>
-                </svg>
+                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
             </div>
           </div>
@@ -298,14 +260,10 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://arxiv.org/abs/2209.08169" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <path d="M14 2v6h6"></path>
-                  <path d="M16 13H8M16 17H8"></path>
-                </svg>
+                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
               <a class="btn secondary icon-only" href="https://github.com/amir-noohian/Val_Sum-MBRL" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <i class="ti ti-brand-github" aria-hidden="true"></i>
+                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
               </a>
             </div>
           </div>
