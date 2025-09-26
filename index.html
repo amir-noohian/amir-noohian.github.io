@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amir Noohian | Robotics Portfolio</title>
-  <meta name="description" content="Robotics portfolio of Amir Noohian — teleoperation, control, machine learning, and computer vision." />
+  $1
+  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <style>
     :root {
       --bg: #fdfdfd;
@@ -30,7 +31,10 @@
     .icon { width: 20px; height: 20px; display: inline-block; }
     .chip, .btn { display: inline-flex; align-items: center; gap: 8px; }
     .icon-only { width: 40px; height: 40px; padding: 0; border-radius: 999px; justify-content: center; }
-    .icon-only .icon, .icon-only svg { width: 20px; height: 20px; }
+    $1
+    .icon-only .ti { font-size: 20px; line-height: 1; } 
+    .links .icon-only { color: var(--text); }
+    .links .icon-only[title="LinkedIn"]:hover { color: #0A66C2; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); border: 0; }
 
     /* Header / Hero */
@@ -114,9 +118,7 @@
           </a>
 
           <a class="chip icon-only" href="https://www.linkedin.com/in/amir-noohian" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" role="img">
-              <path fill="#0A66C2" d="M20.447 20.452H17.2v-5.569c0-1.328-.474-2.236-1.662-2.236-.906 0-1.446.61-1.684 1.2-.086.21-.108.5-.108.79v5.815H10.082V10.05h3.554v1.42c.472-.732 1.317-1.776 3.198-1.776 2.333 0 4.081 1.52 4.081 4.786v5.972zM5.337 7.433c-1.145 0-1.894-.75-1.894-1.69 0-.96.77-1.69 1.938-1.69 1.168 0 1.893.73 1.914 1.69 0 .94-.746 1.69-1.958 1.69h0zM3.675 20.452h3.333V10.05H3.675v10.402zM22.225 0H1.771C.792 0 0 .77 0 1.723v20.555C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.278V1.723C24 .77 23.2 0 22.222 0h.003z"/>
-            </svg>
+            <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
           </a>
 
           <a class="chip icon-only" href="mailto:noohian@ualberta.ca" title="Email" aria-label="Email">
@@ -264,7 +266,14 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary icon-only" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener" title="Publication" aria-label="Publication (Frontiers)">
+              <a class="btn icon-only" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <path d="M16 13H8M16 17H8"></path>
+                </svg>
+              </a>
+              <a class="btn secondary icon-only" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener" title="Publication (Frontiers)" aria-label="Publication (Frontiers)">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <path d="M14 2v6h6"></path>
