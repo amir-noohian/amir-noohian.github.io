@@ -43,6 +43,16 @@
     .hero img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(0,0,0,0.05); }
     .hero h1 { margin: 0 0 8px; font-size: 28px; }
     .hero p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    /* Make intro & project text justified */
+    .hero { text-align: left; } /* prevent header's center alignment */
+    .hero p,
+    .project-card p.project-desc {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
     .hero .links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
 
     /* Section wrapper */
@@ -65,12 +75,12 @@
     .project-media img { object-fit: contain; background: #0000; }
 
     .project-title { margin: 4px 0 6px; font-size: 18px; }
-    .project-desc { margin: 0; color: var(--muted); }
+    .project-desc { margin: 0; color: var(--muted); line-height: 1.7; }
     .project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
     .btn { padding: 8px 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb; }
     .btn.secondary { background: transparent; }
 
-    /* Unified badges (no separate Software/Keywords containers) */
+    /* Unified badges */
     .badges { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 8px; }
     .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #eef2ff; border: 1px solid #e5e7eb; font-size: 12px; color: #1f2937; }
 
@@ -241,7 +251,7 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary icon-only" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener" title="Publication" aria-label="Publication=">
+              <a class="btn secondary icon-only" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
                 <i class="fa fa-file-text-o" aria-hidden="true"></i>
               </a>
             </div>
