@@ -26,10 +26,12 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* Icons */
+    .icon { width: 18px; height: 18px; display: inline-block; vertical-align: -3px; }
+    .chip, .btn { display: inline-flex; align-items: center; gap: 8px; }
+
     /* Header / Hero */
-    header {
-      padding: 56px 20px 28px; text-align: center;
-    }
+    header { padding: 56px 20px 28px; text-align: center; }
     .hero {
       max-width: 980px; margin: 0 auto; background: var(--panel); border-radius: var(--radius);
       padding: 28px; box-shadow: var(--shadow);
@@ -42,7 +44,7 @@
     .hero p { margin: 0; color: var(--muted); line-height: 1.6; }
     .hero .links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
     .chip {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
+      padding: 8px 12px; border-radius: 999px;
       background: #f3f4f6; color: var(--text); border: 1px solid #e5e7eb;
     }
 
@@ -65,12 +67,7 @@
       display: grid; grid-template-columns: 1fr; gap: 12px;
     }
 
-    /*
-      Responsive media box (16:9) that works for iframes, videos, and images.
-      - Keeps all project cards the same media height.
-      - Images/GIFs use object-fit: contain (no cropping).
-      - Iframes/videos fill the box.
-    */
+    /* Responsive media box: consistent 16:9 for iframes/videos/images */
     .project-media {
       position: relative;
       width: 100%;
@@ -79,37 +76,21 @@
       background: #f3f4f6;
       border: 1px solid #e5e7eb;
     }
-    /* 16:9 aspect ratio */
     .project-media::before {
-      content: "";
-      display: block;
-      padding-top: 56.25%; /* 16 / 9 * 100% */
+      content: ""; display: block; padding-top: 56.25%; /* 16:9 */
     }
-    /* Absolutely position the actual media to fill the box */
     .project-media > * {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      border: 0;
+      position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
     }
-    /* Iframes/videos: fill the frame */
-    .project-media iframe,
-    .project-media video {
-      object-fit: cover;
-    }
-    /* Images/GIFs: show fully without cropping (letterbox if needed) */
-    .project-media img {
-      object-fit: contain;
-    }
+    /* Iframes/videos fill; images/GIFs show fully without crop */
+    .project-media iframe, .project-media video { object-fit: cover; }
+    .project-media img { object-fit: contain; background: #0000; }
 
     .project-title { margin: 4px 0 6px; font-size: 18px; }
     .project-desc { margin: 0; color: var(--muted); }
     .project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
     .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; border: 1px solid #e5e7eb;
-      background: #f9fafb;
+      padding: 8px 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb;
     }
     .btn.secondary { background: transparent; }
 
@@ -119,9 +100,7 @@
     .meta-row strong { font-size: 13px; color: #374151; }
     .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #eef2ff; border: 1px solid #e5e7eb; font-size: 12px; color: #1f2937; }
 
-    @media (min-width: 760px) {
-      .project-card { grid-column: span 6; }
-    }
+    @media (min-width: 760px) { .project-card { grid-column: span 6; } }
 
     /* Footer */
     footer { text-align: center; color: var(--muted); padding: 28px; background: #f9fafb; border-top: 1px solid #e5e7eb; }
@@ -134,14 +113,43 @@
       <img src="images/profile.jpg" alt="Portrait of Amirhossein Noohian" />
       <div>
         <h1>Amir Noohian</h1>
-        <p>
-          Researcher in robotics focused on teleoperation, inverse dynamics, and learning-enabled control.
-        </p>
+        <p>Researcher in robotics focused on teleoperation, inverse dynamics, and learning-enabled control.</p>
+
+        <!-- Links with default brand icons -->
         <div class="links">
-          <a class="chip" href="#projects">Projects</a>
-          <a class="chip" href="https://github.com/amir-noohian" target="_blank" rel="noopener">GitHub</a>
-          <a class="chip" href="https://www.linkedin.com/in/amir-noohian" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="chip" href="mailto:noohian@ualberta.ca">Email</a>
+          <a class="chip" href="#projects" aria-label="Projects">
+            <!-- Simple list icon (inline SVG) -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="8" y1="6" x2="21" y2="6"></line>
+              <line x1="8" y1="12" x2="21" y2="12"></line>
+              <line x1="8" y1="18" x2="21" y2="18"></line>
+              <circle cx="4" cy="6" r="1.5"></circle>
+              <circle cx="4" cy="12" r="1.5"></circle>
+              <circle cx="4" cy="18" r="1.5"></circle>
+            </svg>
+            <span>Projects</span>
+          </a>
+
+          <a class="chip" href="https://github.com/amir-noohian" target="_blank" rel="noopener" aria-label="GitHub">
+            <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
+            <span>GitHub</span>
+          </a>
+
+          <a class="chip" href="https://www.linkedin.com/in/amir-noohian" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img class="icon" src="https://cdn.simpleicons.org/linkedin/1f2937" alt="" />
+            <span>LinkedIn</span>
+          </a>
+
+          <a class="chip" href="mailto:noohian@ualberta.ca" aria-label="Email">
+            <!-- Envelope icon -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
+              <path d="M3 7l9 6 9-6"></path>
+            </svg>
+            <span>Email</span>
+          </a>
         </div>
       </div>
     </div>
@@ -150,34 +158,37 @@
   <main>
     <div class="container">
       <h2 id="projects" class="section-title">Projects</h2>
+
       <div class="grid">
         <!-- Project 1 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/XEbsjBWfWnI" title="WAM teleop demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/XEbsjBWfWnI"
+              title="WAM teleop demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
-            <h3 class="project-title">Sensorless Four‑Channel Control on Human-Scale WAM Teleoperation System</h3>
+            <h3 class="project-title">Sensorless Four-Channel Control on Human-Scale WAM Teleoperation System</h3>
             <p class="project-desc">
-              Inverse‑dynamics‑based four‑channel teleop that improves transparency in free motion and hard contact without force/torque sensors.
+              Inverse-dynamics-based four-channel teleop that improves transparency in free motion and hard contact without force/torque sensors.
             </p>
 
-            <!-- Software + Keywords -->
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">ROS</span>
-                <span class="badge">C++</span>
-                <span class="badge">MATLAB</span>
+                <span class="badge">ROS</span><span class="badge">C++</span><span class="badge">MATLAB</span>
               </div>
               <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">teleoperation</span>
-                <span class="badge">inverse dynamics</span>
-                <span class="badge">WAM Barrett</span>
+                <span class="badge">teleoperation</span><span class="badge">inverse dynamics</span><span class="badge">WAM Barrett</span>
               </div>
             </div>
 
             <div class="project-links">
-              <a class="btn secondary" href="https://github.com/amir-noohian/wam-teleop-nowrist" target="_blank">Code on GitHub</a>
+              <a class="btn secondary" href="https://github.com/amir-noohian/wam-teleop-nowrist" target="_blank" rel="noopener">
+                <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
+                <span>Code on GitHub</span>
+              </a>
             </div>
           </div>
         </article>
@@ -185,7 +196,11 @@
         <!-- Project 3 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/yCI4YB7VcT0" title="Excitation trajectory demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/yCI4YB7VcT0"
+              title="Excitation trajectory demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Inverse Dynamics Estimation</h3>
@@ -193,22 +208,20 @@
               Symbolic rigid-body modeling methods for dynamics estimation of the WAM robot, including 4-DOF and 7-DOF implementations.
             </p>
 
-            <!-- Software + Keywords -->
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">ROS</span>
-                <span class="badge">Python</span>
-                <span class="badge">MATLAB</span>
+                <span class="badge">ROS</span><span class="badge">Python</span><span class="badge">MATLAB</span>
               </div>
               <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">rigid body dynamics</span>
-                <span class="badge">inverse dynamics</span>
-                <span class="badge">WAM Barrett</span>
+                <span class="badge">rigid body dynamics</span><span class="badge">inverse dynamics</span><span class="badge">WAM Barrett</span>
               </div>
             </div>
 
             <div class="project-links">
-              <a class="btn secondary" href="https://github.com/amir-noohian/feasible-dynamics-estimation" target="_blank">Code on GitHub</a>
+              <a class="btn secondary" href="https://github.com/amir-noohian/feasible-dynamics-estimation" target="_blank" rel="noopener">
+                <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
+                <span>Code on GitHub</span>
+              </a>
             </div>
           </div>
         </article>
@@ -216,7 +229,11 @@
         <!-- Project 4 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/uaKr5NB4_qQ" title="Visual reacher demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/uaKr5NB4_qQ"
+              title="Visual reacher demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Torque-based Reinforcement Learning (RL) for Visual Reacher Task</h3>
@@ -224,22 +241,20 @@
               Reinforcement learning framework for visual reaching tasks, investigating the impact of torque- and velocity-based action spaces on control performance.
             </p>
 
-            <!-- Software + Keywords -->
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">ROS</span>
-                <span class="badge">Python</span>
-                <span class="badge">Pytorch</span>
+                <span class="badge">ROS</span><span class="badge">Python</span><span class="badge">Pytorch</span>
               </div>
               <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">RL</span>
-                <span class="badge">torque control</span>
-                <span class="badge">Franka Emika Panda</span>
+                <span class="badge">RL</span><span class="badge">torque control</span><span class="badge">Franka Emika Panda</span>
               </div>
             </div>
 
             <div class="project-links">
-              <a class="btn secondary" href="https://github.com/amir-noohian/torque-visual-reacher-rl" target="_blank">Code on GitHub</a>
+              <a class="btn secondary" href="https://github.com/amir-noohian/torque-visual-reacher-rl" target="_blank" rel="noopener">
+                <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
+                <span>Code on GitHub</span>
+              </a>
             </div>
           </div>
         </article>
@@ -247,7 +262,11 @@
         <!-- Project 5 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/JYl7WHXNV4U" title="DMPs with RL demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/JYl7WHXNV4U"
+              title="DMPs with RL demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Learning Dynamic Movement Primitives (DMPs) with Reinforcement Learning (RL)</h3>
@@ -255,21 +274,26 @@
               Reinforcement learning approach to learn and refine dynamic movement primitives (DMPs) for improved adaptability in robotic motion.
             </p>
 
-            <!-- Software + Keywords -->
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">Python</span>
-                <span class="badge">Pytorch</span>
-                <span class="badge">MuJoCo</span>
+                <span class="badge">Python</span><span class="badge">Pytorch</span><span class="badge">MuJoCo</span>
               </div>
               <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">RL</span>
-                <span class="badge">imitation learning</span>
+                <span class="badge">RL</span><span class="badge">imitation learning</span>
               </div>
             </div>
 
             <div class="project-links">
-              <a class="btn" href="https://ieeexplore.ieee.org/abstract/document/10025346" target="_blank">Publication</a>
+              <a class="btn" href="https://ieeexplore.ieee.org/abstract/document/10025346" target="_blank" rel="noopener">
+                <!-- Publication icon -->
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <path d="M16 13H8M16 17H8"></path>
+                </svg>
+                <span>Publication</span>
+              </a>
             </div>
           </div>
         </article>
@@ -277,7 +301,11 @@
         <!-- Project 6 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe src="https://www.youtube.com/embed/YApFz2IVojw" title="MPPI demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/YApFz2IVojw"
+              title="MPPI demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Adaptive and Fault-Tolerant Model Predictive Path Integral Control (MPPI)</h3>
@@ -285,22 +313,34 @@
               Enhanced model predictive path integral control (MPPI) framework to make it robust to parameter uncertainties and system faults.
             </p>
 
-            <!-- Software + Keywords -->
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">Python</span>
-                <span class="badge">MuJoCo</span>
+                <span class="badge">Python</span><span class="badge">MuJoCo</span>
               </div>
               <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">MPPI</span>
-                <span class="badge">adaptive control</span>
-                <span class="badge">fault-tolerant control</span>
+                <span class="badge">MPPI</span><span class="badge">adaptive control</span><span class="badge">fault-tolerant control</span>
               </div>
             </div>
 
             <div class="project-links">
-              <a class="btn" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank">Publication</a>
-              <a class="btn secondary" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank">Publication (Frontiers)</a>
+              <a class="btn" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <path d="M16 13H8M16 17H8"></path>
+                </svg>
+                <span>Publication</span>
+              </a>
+              <a class="btn secondary" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <path d="M16 13H8M16 17H8"></path>
+                </svg>
+                <span>Publication (Frontiers)</span>
+              </a>
             </div>
           </div>
         </article>
@@ -316,21 +356,29 @@
               Integration of model predictive control (MPC) with reinforcement learning to improve sample efficiency and ensure safe policy execution.
             </p>
 
-            <!-- Software + Keywords -->
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
-                <span class="badge">Python</span>
-                <span class="badge">Pytorch</span>
+                <span class="badge">Python</span><span class="badge">Pytorch</span>
               </div>
               <div class="meta-row"><strong>Keywords:</strong>
-                <span class="badge">MPC</span>
-                <span class="badge">Model-based RL</span>
+                <span class="badge">MPC</span><span class="badge">Model-based RL</span>
               </div>
             </div>
 
             <div class="project-links">
-              <a class="btn" href="https://arxiv.org/abs/2209.08169" target="_blank">Publication</a>
-              <a class="btn secondary" href="https://github.com/amir-noohian/Val_Sum-MBRL" target="_blank">Code on GitHub</a>
+              <a class="btn" href="https://arxiv.org/abs/2209.08169" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <path d="M16 13H8M16 17H8"></path>
+                </svg>
+                <span>Publication</span>
+              </a>
+              <a class="btn secondary" href="https://github.com/amir-noohian/Val_Sum-MBRL" target="_blank" rel="noopener">
+                <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
+                <span>Code on GitHub</span>
+              </a>
             </div>
           </div>
         </article>
