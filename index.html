@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amir Noohian | Robotics Portfolio</title>
   <meta name="description" content="Robotics portfolio of Amir Noohian — teleoperation, control, machine learning, and computer vision." />
+
+  <!-- Font Awesome 4.7: provides fa-linkedin, fa-github, fa-envelope, fa-file-text-o, fa-list -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <style>
     :root {
       --bg: #fdfdfd;
@@ -23,11 +28,15 @@
     a:hover { text-decoration: underline; }
 
     /* Icon-only buttons */
-    .icon { width: 20px; height: 20px; display: block; }
     .chip, .btn { display: inline-flex; align-items: center; gap: 8px; }
     .icon-only { width: 40px; height: 40px; padding: 0; border-radius: 999px; justify-content: center; border: 1px solid #e5e7eb; background: #f3f4f6; }
+    .icon-only .fa { font-size: 20px; line-height: 1; }        /* header icons */
+    .btn.icon-only .fa { font-size: 18px; }                    /* project button icons */
     .links .icon-only { color: var(--text); }
     .links .icon-only:hover { background: #eef2ff; }
+    /* optional brand hovers */
+    .links .icon-only[title="LinkedIn"]:hover { color: #0A66C2; }
+    .links .icon-only[title="GitHub"]:hover { color: #181717; }
 
     /* Header / Hero */
     header { padding: 56px 20px 28px; text-align: center; }
@@ -83,19 +92,19 @@
         <h1>Amir Noohian</h1>
         <p>Researcher in robotics focused on teleoperation, inverse dynamics, and learning-enabled control.</p>
 
-        <!-- Icon-only links (image-based, no webfonts) -->
+        <!-- Icon-only links (Font Awesome) -->
         <div class="links">
           <a class="chip icon-only" href="#projects" title="Projects" aria-label="Projects">
-            <img class="icon" src="https://api.iconify.design/tabler:list-details.svg?color=%231f2937" alt="" loading="lazy" />
+            <i class="fa fa-list" aria-hidden="true"></i>
           </a>
           <a class="chip icon-only" href="https://github.com/amir-noohian" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-            <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
+            <i class="fa fa-github" aria-hidden="true"></i>
           </a>
           <a class="chip icon-only" href="https://www.linkedin.com/in/amir-noohian" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-            <img class="icon" src="https://api.iconify.design/tabler:brand-linkedin.svg?color=%231f2937" alt="" loading="lazy" />
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
           </a>
           <a class="chip icon-only" href="mailto:noohian@ualberta.ca" title="Email" aria-label="Email">
-            <img class="icon" src="https://api.iconify.design/tabler:mail.svg?color=%231f2937" alt="" loading="lazy" />
+            <i class="fa fa-envelope" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -127,7 +136,7 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://github.com/amir-noohian/wam-teleop-nowrist" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-github" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -153,7 +162,7 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://github.com/amir-noohian/feasible-dynamics-estimation" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-github" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -179,7 +188,7 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://github.com/amir-noohian/torque-visual-reacher-rl" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-github" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -205,7 +214,7 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://ieeexplore.ieee.org/abstract/document/10025346" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
-                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -231,10 +240,10 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
-                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
               </a>
               <a class="btn secondary icon-only" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener" title="Publication (Frontiers)" aria-label="Publication (Frontiers)">
-                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -260,10 +269,10 @@
 
             <div class="project-links">
               <a class="btn icon-only" href="https://arxiv.org/abs/2209.08169" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
-                <img class="icon" src="https://api.iconify.design/tabler:file-text.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
               </a>
               <a class="btn secondary icon-only" href="https://github.com/amir-noohian/Val_Sum-MBRL" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
-                <img class="icon" src="https://api.iconify.design/tabler:brand-github.svg?color=%231f2937" alt="" loading="lazy" />
+                <i class="fa fa-github" aria-hidden="true"></i>
               </a>
             </div>
           </div>
