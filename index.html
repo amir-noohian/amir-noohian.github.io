@@ -26,9 +26,12 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Icons */
-    .icon { width: 18px; height: 18px; display: inline-block; vertical-align: -3px; }
+    /* Icons & icon-only buttons */
+    .icon { width: 20px; height: 20px; display: inline-block; }
     .chip, .btn { display: inline-flex; align-items: center; gap: 8px; }
+    .icon-only { width: 40px; height: 40px; padding: 0; border-radius: 999px; justify-content: center; }
+    .icon-only .icon, .icon-only svg { width: 20px; height: 20px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); border: 0; }
 
     /* Header / Hero */
     header { padding: 56px 20px 28px; text-align: center; }
@@ -37,16 +40,11 @@
       padding: 28px; box-shadow: var(--shadow);
       display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: center;
     }
-    .hero img {
-      width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(0,0,0,0.05);
-    }
+    .hero img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(0,0,0,0.05); }
     .hero h1 { margin: 0 0 8px; font-size: 28px; }
     .hero p { margin: 0; color: var(--muted); line-height: 1.6; }
     .hero .links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip {
-      padding: 8px 12px; border-radius: 999px;
-      background: #f3f4f6; color: var(--text); border: 1px solid #e5e7eb;
-    }
+    .chip { padding: 8px 12px; border-radius: 999px; background: #f3f4f6; color: var(--text); border: 1px solid #e5e7eb; }
 
     /* Section wrapper */
     main { padding: 8px 20px 60px; }
@@ -57,41 +55,23 @@
     .muted { color: var(--muted); }
 
     /* Projects grid */
-    .grid {
-      display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px;
-    }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
     .project-card {
-      grid-column: span 12;
-      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-      padding: 16px; border: 1px solid #e5e7eb;
-      display: grid; grid-template-columns: 1fr; gap: 12px;
+      grid-column: span 12; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 16px; border: 1px solid #e5e7eb; display: grid; grid-template-columns: 1fr; gap: 12px;
     }
 
     /* Responsive media box: consistent 16:9 for iframes/videos/images */
-    .project-media {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border-radius: 12px;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-    }
-    .project-media::before {
-      content: ""; display: block; padding-top: 56.25%; /* 16:9 */
-    }
-    .project-media > * {
-      position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0;
-    }
-    /* Iframes/videos fill; images/GIFs show fully without crop */
+    .project-media { position: relative; width: 100%; overflow: hidden; border-radius: 12px; background: #f3f4f6; border: 1px solid #e5e7eb; }
+    .project-media::before { content: ""; display: block; padding-top: 56.25%; }
+    .project-media > * { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: 0; }
     .project-media iframe, .project-media video { object-fit: cover; }
     .project-media img { object-fit: contain; background: #0000; }
 
     .project-title { margin: 4px 0 6px; font-size: 18px; }
     .project-desc { margin: 0; color: var(--muted); }
     .project-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-    .btn {
-      padding: 8px 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb;
-    }
+    .btn { padding: 8px 12px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb; }
     .btn.secondary { background: transparent; }
 
     /* Meta rows: software + keywords */
@@ -115,12 +95,11 @@
         <h1>Amir Noohian</h1>
         <p>Researcher in robotics focused on teleoperation, inverse dynamics, and learning-enabled control.</p>
 
-        <!-- Links with default brand icons -->
+        <!-- Icon-only links -->
         <div class="links">
-          <a class="chip" href="#projects" aria-label="Projects">
-            <!-- Simple list icon (inline SVG) -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <a class="chip icon-only" href="#projects" title="Projects" aria-label="Projects">
+            <!-- List icon -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <line x1="8" y1="6" x2="21" y2="6"></line>
               <line x1="8" y1="12" x2="21" y2="12"></line>
               <line x1="8" y1="18" x2="21" y2="18"></line>
@@ -128,27 +107,22 @@
               <circle cx="4" cy="12" r="1.5"></circle>
               <circle cx="4" cy="18" r="1.5"></circle>
             </svg>
-            <span>Projects</span>
           </a>
 
-          <a class="chip" href="https://github.com/amir-noohian" target="_blank" rel="noopener" aria-label="GitHub">
+          <a class="chip icon-only" href="https://github.com/amir-noohian" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
             <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
-            <span>GitHub</span>
           </a>
 
-          <a class="chip" href="https://www.linkedin.com/in/amir-noohian" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a class="chip icon-only" href="https://www.linkedin.com/in/amir-noohian" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
             <img class="icon" src="https://cdn.simpleicons.org/linkedin/1f2937" alt="" />
-            <span>LinkedIn</span>
           </a>
 
-          <a class="chip" href="mailto:noohian@ualberta.ca" aria-label="Email">
+          <a class="chip icon-only" href="mailto:noohian@ualberta.ca" title="Email" aria-label="Email">
             <!-- Envelope icon -->
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect>
               <path d="M3 7l9 6 9-6"></path>
             </svg>
-            <span>Email</span>
           </a>
         </div>
       </div>
@@ -163,17 +137,11 @@
         <!-- Project 1 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe
-              src="https://www.youtube.com/embed/XEbsjBWfWnI"
-              title="WAM teleop demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.youtube.com/embed/XEbsjBWfWnI" title="WAM teleop demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Sensorless Four-Channel Control on Human-Scale WAM Teleoperation System</h3>
-            <p class="project-desc">
-              Inverse-dynamics-based four-channel teleop that improves transparency in free motion and hard contact without force/torque sensors.
-            </p>
+            <p class="project-desc">Inverse-dynamics-based four-channel teleop that improves transparency in free motion and hard contact without force/torque sensors.</p>
 
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
@@ -185,9 +153,8 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary" href="https://github.com/amir-noohian/wam-teleop-nowrist" target="_blank" rel="noopener">
+              <a class="btn secondary icon-only" href="https://github.com/amir-noohian/wam-teleop-nowrist" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
                 <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
-                <span>Code on GitHub</span>
               </a>
             </div>
           </div>
@@ -196,17 +163,11 @@
         <!-- Project 3 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe
-              src="https://www.youtube.com/embed/yCI4YB7VcT0"
-              title="Excitation trajectory demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.youtube.com/embed/yCI4YB7VcT0" title="Excitation trajectory demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Inverse Dynamics Estimation</h3>
-            <p class="project-desc">
-              Symbolic rigid-body modeling methods for dynamics estimation of the WAM robot, including 4-DOF and 7-DOF implementations.
-            </p>
+            <p class="project-desc">Symbolic rigid-body modeling methods for dynamics estimation of the WAM robot, including 4-DOF and 7-DOF implementations.</p>
 
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
@@ -218,9 +179,8 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary" href="https://github.com/amir-noohian/feasible-dynamics-estimation" target="_blank" rel="noopener">
+              <a class="btn secondary icon-only" href="https://github.com/amir-noohian/feasible-dynamics-estimation" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
                 <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
-                <span>Code on GitHub</span>
               </a>
             </div>
           </div>
@@ -229,17 +189,11 @@
         <!-- Project 4 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe
-              src="https://www.youtube.com/embed/uaKr5NB4_qQ"
-              title="Visual reacher demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.youtube.com/embed/uaKr5NB4_qQ" title="Visual reacher demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Torque-based Reinforcement Learning (RL) for Visual Reacher Task</h3>
-            <p class="project-desc">
-              Reinforcement learning framework for visual reaching tasks, investigating the impact of torque- and velocity-based action spaces on control performance.
-            </p>
+            <p class="project-desc">Reinforcement learning framework for visual reaching tasks, investigating the impact of torque- and velocity-based action spaces on control performance.</p>
 
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
@@ -251,9 +205,8 @@
             </div>
 
             <div class="project-links">
-              <a class="btn secondary" href="https://github.com/amir-noohian/torque-visual-reacher-rl" target="_blank" rel="noopener">
+              <a class="btn secondary icon-only" href="https://github.com/amir-noohian/torque-visual-reacher-rl" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
                 <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
-                <span>Code on GitHub</span>
               </a>
             </div>
           </div>
@@ -262,17 +215,11 @@
         <!-- Project 5 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe
-              src="https://www.youtube.com/embed/JYl7WHXNV4U"
-              title="DMPs with RL demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.youtube.com/embed/JYl7WHXNV4U" title="DMPs with RL demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Learning Dynamic Movement Primitives (DMPs) with Reinforcement Learning (RL)</h3>
-            <p class="project-desc">
-              Reinforcement learning approach to learn and refine dynamic movement primitives (DMPs) for improved adaptability in robotic motion.
-            </p>
+            <p class="project-desc">Reinforcement learning approach to learn and refine dynamic movement primitives (DMPs) for improved adaptability in robotic motion.</p>
 
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
@@ -284,15 +231,13 @@
             </div>
 
             <div class="project-links">
-              <a class="btn" href="https://ieeexplore.ieee.org/abstract/document/10025346" target="_blank" rel="noopener">
+              <a class="btn icon-only" href="https://ieeexplore.ieee.org/abstract/document/10025346" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
                 <!-- Publication icon -->
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <path d="M14 2v6h6"></path>
                   <path d="M16 13H8M16 17H8"></path>
                 </svg>
-                <span>Publication</span>
               </a>
             </div>
           </div>
@@ -301,17 +246,11 @@
         <!-- Project 6 -->
         <article class="project-card">
           <div class="project-media">
-            <iframe
-              src="https://www.youtube.com/embed/YApFz2IVojw"
-              title="MPPI demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.youtube.com/embed/YApFz2IVojw" title="MPPI demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div>
             <h3 class="project-title">Adaptive and Fault-Tolerant Model Predictive Path Integral Control (MPPI)</h3>
-            <p class="project-desc">
-              Enhanced model predictive path integral control (MPPI) framework to make it robust to parameter uncertainties and system faults.
-            </p>
+            <p class="project-desc">Enhanced model predictive path integral control (MPPI) framework to make it robust to parameter uncertainties and system faults.</p>
 
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
@@ -323,23 +262,19 @@
             </div>
 
             <div class="project-links">
-              <a class="btn" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <a class="btn icon-only" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <path d="M14 2v6h6"></path>
                   <path d="M16 13H8M16 17H8"></path>
                 </svg>
-                <span>Publication</span>
               </a>
-              <a class="btn secondary" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <a class="btn secondary icon-only" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.1027918/full" target="_blank" rel="noopener" title="Publication (Frontiers)" aria-label="Publication (Frontiers)">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <path d="M14 2v6h6"></path>
                   <path d="M16 13H8M16 17H8"></path>
                 </svg>
-                <span>Publication (Frontiers)</span>
               </a>
             </div>
           </div>
@@ -352,9 +287,7 @@
           </div>
           <div>
             <h3 class="project-title">Model-based Reinforcement Learning (RL) with Model Predictive Control (MPC)</h3>
-            <p class="project-desc">
-              Integration of model predictive control (MPC) with reinforcement learning to improve sample efficiency and ensure safe policy execution.
-            </p>
+            <p class="project-desc">Integration of model predictive control (MPC) with reinforcement learning to improve sample efficiency and ensure safe policy execution.</p>
 
             <div class="meta">
               <div class="meta-row"><strong>Software:</strong>
@@ -366,18 +299,15 @@
             </div>
 
             <div class="project-links">
-              <a class="btn" href="https://arxiv.org/abs/2209.08169" target="_blank" rel="noopener">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <a class="btn icon-only" href="https://arxiv.org/abs/2209.08169" target="_blank" rel="noopener" title="Publication" aria-label="Publication">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <path d="M14 2v6h6"></path>
                   <path d="M16 13H8M16 17H8"></path>
                 </svg>
-                <span>Publication</span>
               </a>
-              <a class="btn secondary" href="https://github.com/amir-noohian/Val_Sum-MBRL" target="_blank" rel="noopener">
+              <a class="btn secondary icon-only" href="https://github.com/amir-noohian/Val_Sum-MBRL" target="_blank" rel="noopener" title="Code on GitHub" aria-label="Code on GitHub">
                 <img class="icon" src="https://cdn.simpleicons.org/github/1f2937" alt="" />
-                <span>Code on GitHub</span>
               </a>
             </div>
           </div>
