@@ -78,6 +78,12 @@
     }
     .btn.secondary { background: transparent; }
 
+    /* Meta rows: software + keywords */
+    .meta { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
+    .meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+    .meta-row strong { font-size: 13px; color: #374151; }
+    .badge { display: inline-block; padding: 4px 8px; border-radius: 999px; background: #eef2ff; border: 1px solid #e5e7eb; font-size: 12px; color: #1f2937; }
+
     @media (min-width: 760px) {
       .project-card { grid-column: span 6; }
     }
@@ -99,9 +105,9 @@
         </p>
         <div class="links">
           <a class="chip" href="#projects">Projects</a>
-          <!-- <a class="chip" href="#pubs">Publications</a> -->
           <a class="chip" href="https://github.com/amir-noohian" target="_blank" rel="noopener">GitHub</a>
-          <!-- <a class="chip" href="mailto:you@example.com">Contact</a> -->
+          <a class="chip" href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="chip" href="mailto:your@email.com">Email</a>
         </div>
       </div>
     </div>
@@ -110,10 +116,8 @@
   <main>
     <div class="container">
       <h2 id="projects" class="section-title">Projects</h2>
-      <!-- <p class="muted" style="margin: 0 4px 16px;">Short videos + notes, with links to publications and code.</p> -->
-
       <div class="grid">
-        <!-- Example project (keep the same structure for others) -->
+        <!-- Project 1 -->
         <article class="project-card">
           <div class="project-media">
             <iframe src="https://www.youtube.com/embed/YOUTUBE_ID" title="Teleoperation demo" frameborder="0" allowfullscreen></iframe>
@@ -123,23 +127,62 @@
             <p class="project-desc">
               Inverse‑dynamics‑based four‑channel teleop that improves transparency in free motion and hard contact without force/torque sensors.
             </p>
+
+            <!-- Software + Keywords -->
+            <div class="meta">
+              <div class="meta-row"><strong>Software:</strong>
+                <span class="badge">ROS</span>
+                <span class="badge">C++</span>
+                <span class="badge">libbarrett</span>
+                <span class="badge">Eigen</span>
+              </div>
+              <div class="meta-row"><strong>Keywords:</strong>
+                <span class="badge">teleoperation</span>
+                <span class="badge">inverse dynamics</span>
+                <span class="badge">transparency</span>
+                <span class="badge">WAM</span>
+              </div>
+            </div>
+
             <div class="project-links">
               <a class="btn" href="https://arxiv.org/abs/DOI_OR_ARXIV" target="_blank">Publication</a>
               <a class="btn secondary" href="https://github.com/your-org/your-teleop-repo" target="_blank">Code on GitHub</a>
             </div>
           </div>
         </article>
-      </div>
 
-      <!-- <h2 id="pubs" class="section-title">Publications & Links</h2>
-      <div class="project-card" style="grid-column: span 12;">
-        <p class="muted" style="margin-top: 0;">
-          Full list: <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> ·
-          <a href="https://orcid.org/" target="_blank">ORCID</a> ·
-          <a href="https://github.com/your-github" target="_blank">GitHub</a>
-        </p>
+        <!-- ▼▼ COPY THIS TEMPLATE TO ADD A NEW PROJECT ▼▼ -->
+        <!--
+        <article class="project-card">
+          <div class="project-media">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="PROJECT TITLE" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div>
+            <h3 class="project-title">PROJECT TITLE</h3>
+            <p class="project-desc">One- or two-sentence summary of the project and result.</p>
+            <div class="meta">
+              <div class="meta-row"><strong>Software:</strong>
+                <span class="badge">ROS</span>
+                <span class="badge">C++</span>
+                <span class="badge">Gazebo</span>
+              </div>
+              <div class="meta-row"><strong>Keywords:</strong>
+                <span class="badge">simulation</span>
+                <span class="badge">control</span>
+                <span class="badge">perception</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a class="btn" href="https://doi.org/your-doi-or-arxiv" target="_blank">Publication</a>
+              <a class="btn secondary" href="https://github.com/your-user/your-repo" target="_blank">Code on GitHub</a>
+            </div>
+          </div>
+        </article>
+        -->
+        <!-- ▲▲ END TEMPLATE ▲▲ -->
+
       </div>
-    </div> -->
+    </div>
   </main>
 
   <footer>
