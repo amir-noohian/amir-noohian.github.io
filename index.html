@@ -39,8 +39,26 @@
 
     /* Header / Hero */
     header { padding: 56px 20px 28px; text-align: center; }
-    .hero { max-width: 980px; margin: 0 auto; background: var(--panel); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: center; }
-    .hero img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(0,0,0,0.05); }
+    .hero {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: auto 1fr; /* text takes all space if no img */
+      gap: 24px;
+      align-items: center;
+    }
+    
+    .hero img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(0,0,0,0.05);
+    }    
     .hero h1 { margin: 0 0 8px; font-size: 28px; }
     .hero p { margin: 0; color: var(--muted); line-height: 1.6; }
 
